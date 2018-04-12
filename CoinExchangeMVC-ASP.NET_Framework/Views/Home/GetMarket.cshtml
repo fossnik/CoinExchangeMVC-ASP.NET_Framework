@@ -1,0 +1,43 @@
+﻿@using CoinExchangeMVC_ASP.NET_Framework.Models
+@model GetMarketResult
+@{
+    ViewBag.Title = "GetMarketResult";
+}
+<html>
+<head>
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    <h4>Request:<br />@Model.request</h4>
+</head>
+<body>
+@{
+    if (Model.success == 1)
+    {
+        <div>
+            <table class="table table-bordered table-hover">
+                <thead>
+                <tr><th colspan="4">Markets List</th></tr>
+                <tr>
+                    <td>Name</td>
+                    <td>ID</td>
+                    <td>Base Currency</td>
+                    <td>Active</td>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (Market market in Model.result)
+                {
+                    <tr>
+                        <td>@market.MarketAssetName</td>
+                        <td><a href="Details/@market.MarketID">@market.MarketID</a></td>
+                        <td>@market.BaseCurrency</td>
+                        <td>@market.Active</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    }
+}
+</body>
+</html>
