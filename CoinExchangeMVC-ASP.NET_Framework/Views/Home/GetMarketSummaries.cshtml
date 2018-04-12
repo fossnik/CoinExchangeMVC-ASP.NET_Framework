@@ -1,0 +1,59 @@
+﻿@using CoinExchangeMVC_ASP.NET_Framework.Models
+@model GetMarketSummaries
+@{
+    ViewBag.Title = "GetMarketSummaries";
+}
+<html>
+<head>
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    <h4>Request:<br />@Model.request</h4>
+</head>
+<body>
+@{
+    if (Model.success == 1)
+    {
+        foreach (MarketSummary marketSummary in Model.result)
+        {
+            <div>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                    <tr><th colspan="12">@marketSummary.MarketID</th></tr>
+                    <tr>
+                        <td>MarketID</td>
+                        <td>LastPrice</td>
+                        <td>Change</td>
+                        <td>HighPrice</td>
+                        <td>LowPrice</td>
+                        <td>Volume</td>
+                        <td>BTCVolume</td>
+                        <td>TradeCount</td>
+                        <td>BidPrice</td>
+                        <td>AskPrice</td>
+                        <td>BuyOrders</td>
+                        <td>SellOrders</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@marketSummary.MarketID</td>
+                            <td>@marketSummary.LastPrice</td>
+                            <td>@marketSummary.Change</td>
+                            <td>@marketSummary.HighPrice</td>
+                            <td>@marketSummary.LowPrice</td>
+                            <td>@marketSummary.Volume</td>
+                            <td>@marketSummary.BTCVolume</td>
+                            <td>@marketSummary.TradeCount</td>
+                            <td>@marketSummary.BidPrice</td>
+                            <td>@marketSummary.AskPrice</td>
+                            <td>@marketSummary.BuyOrderCount</td>
+                            <td>@marketSummary.SellOrderCount</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        }
+    }
+}
+</body>
+</html>

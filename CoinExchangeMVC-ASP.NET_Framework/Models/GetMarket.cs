@@ -2,7 +2,7 @@
 
 namespace CoinExchangeMVC_ASP.NET_Framework.Models
 {
-    public class GetMarketResult
+    public class GetMarket
     {
         public int success;
         public string request;

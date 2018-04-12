@@ -19,7 +19,7 @@ namespace CoinExchangeMVC_ASP.NET_Framework.Controllers
         {
             ViewBag.Message = "GetMarket Endpoint";
 
-            GetMarketResult getMarketResult = null;
+            GetMarket getMarketResult = null;
 
             string url = "https://www.coinexchange.io/api/v1/getmarkets";
 
@@ -39,7 +39,7 @@ namespace CoinExchangeMVC_ASP.NET_Framework.Controllers
                     // string from stream
                     string content = responseReader.ReadToEnd();
 
-                    getMarketResult = JsonConvert.DeserializeObject<GetMarketResult>(content);
+                    getMarketResult = JsonConvert.DeserializeObject<GetMarket>(content);
                 }
             }
 
@@ -49,11 +49,38 @@ namespace CoinExchangeMVC_ASP.NET_Framework.Controllers
                 return HttpNotFound();
         }
 
-        public ActionResult Contact()
+        public ActionResult GetMarketSummaries()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Market Summaries";
 
-            return View();
+            GetMarketSummaries getMarketSummariesResult = null;
+
+            string url = "https://www.coinexchange.io/api/v1/getmarketsummaries";
+
+            // web request
+            WebRequest request = WebRequest.Create(url);
+            request.Method = "POST";
+
+            // response buffer
+            WebResponse response = request.GetResponse();
+
+            // response stream
+            using (var responseStream = response.GetResponseStream())
+            {
+                // read stream
+                using (var responseReader = new StreamReader(responseStream ?? throw new InvalidOperationException(), Encoding.UTF8))
+                {
+                    // string from stream
+                    string content = responseReader.ReadToEnd();
+
+                    getMarketSummariesResult = JsonConvert.DeserializeObject<GetMarketSummaries>(content);
+                }
+            }
+
+            if (getMarketSummariesResult != null)
+                return View(getMarketSummariesResult);
+            else
+                return HttpNotFound();
         }
     }
 }
