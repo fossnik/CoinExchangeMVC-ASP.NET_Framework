@@ -1,4 +1,6 @@
-﻿namespace CoinExchangeMVC_ASP.NET_Framework.Models.Market
+﻿using CoinExchangeMVC_ASP.NET_Framework.Models.MarketSummary;
+
+namespace CoinExchangeMVC_ASP.NET_Framework.Models.Market
 {
     public class Market
     {
@@ -11,5 +13,7 @@
         public string BaseCurrencyCode;
         public int BaseCurrencyID;
         public bool Active;
+
+        public virtual Snapshot Snapshot { get; set; }
     }
 }
