@@ -146,10 +146,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\GetMarket.cs" />
-    <Compile Include="Models\GetMarketSummaries.cs" />
-    <Compile Include="Models\Market.cs" />
-    <Compile Include="Models\MarketSummary.cs" />
+    <Compile Include="Models\Market\GetMarket.cs" />
+    <Compile Include="Models\MarketSummary\GetMarketSummaries.cs" />
+    <Compile Include="Models\Market\Market.cs" />
+    <Compile Include="Models\MarketSummary\MarketSummary.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

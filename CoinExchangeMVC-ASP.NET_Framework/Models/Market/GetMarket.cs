@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace CoinExchangeMVC_ASP.NET_Framework.Models
+namespace CoinExchangeMVC_ASP.NET_Framework.Models.Market
 {
     public class GetMarket
     {

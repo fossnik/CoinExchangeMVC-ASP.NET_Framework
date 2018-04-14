@@ -4,6 +4,8 @@ using System.Net;
 using System.Text;
 using System.Web.Mvc;
 using CoinExchangeMVC_ASP.NET_Framework.Models;
+using CoinExchangeMVC_ASP.NET_Framework.Models.Market;
+using CoinExchangeMVC_ASP.NET_Framework.Models.MarketSummary;
 using Newtonsoft.Json;
 
 namespace CoinExchangeMVC_ASP.NET_Framework.Controllers

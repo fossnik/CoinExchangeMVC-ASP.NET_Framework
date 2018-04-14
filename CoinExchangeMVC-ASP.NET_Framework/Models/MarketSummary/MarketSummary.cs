@@ -1,4 +1,4 @@
-﻿namespace CoinExchangeMVC_ASP.NET_Framework.Models
+﻿namespace CoinExchangeMVC_ASP.NET_Framework.Models.MarketSummary
 {
     public class MarketSummary
     {
